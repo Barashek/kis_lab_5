@@ -1,3 +1,73 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+GetCompany:
+  path: /company/{id}
+  controller: App\Controller\CompanyGetController::show
+  methods: GET
+  requirements:
+    id: '\d+'
+
+GetCompanyVacancies:
+  path: /company/{id}/vacancies
+  controller: App\Controller\CompanyGetController::getVacancies
+  methods: GET
+  requirements:
+    id: '\d+'
+
+
+GetCompanies:
+  path: /companies
+  controller: App\Controller\CompanyGetController::getCompanies
+  methods: GET
+
+GetVacancy:
+  path: /vacancy/{id}
+  controller: App\Controller\VacancyGetController::show
+  methods: GET
+  requirements:
+    id: '\d+'
+
+CreateCompany:
+  path: /company
+  controller: App\Controller\CompanyController::create
+  methods: POST
+
+UpdateCompany:
+  path: /company/{id}
+  controller: App\Controller\CompanyController::update
+  methods: PATCH
+  requirements:
+    id: '\d+'
+
+DeleteCompany:
+  path: /company/{id}
+  controller: App\Controller\CompanyController::delete
+  methods: DELETE
+  requirements:
+    id: '\d+'
+
+CreateVacancy:
+  path: /vacancy
+  controller: App\Controller\VacancyController::create
+  methods: POST
+
+UpdateVacancy:
+  path: /vacancy/{id}
+  controller: App\Controller\VacancyController::update
+  methods: PATCH
+  requirements:
+    id: '\d+'
+
+DeleteVacancy:
+  path: /vacancy/{id}
+  controller: App\Controller\VacancyController::delete
+  methods: DELETE
+  requirements:
+    id: '\d+'
+
+CreateAuth:
+  path: /auth
+  controller: App\Controller\AuthController::create
+  methods: POST

@@ -1,0 +1,5 @@
+parameters:
+  database_host:      localhost
+  database_name:      kis_5
+  database_user:      root
+  database_password:
