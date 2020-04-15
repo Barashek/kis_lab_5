@@ -1,0 +1,1691 @@
+{
+	"info": {
+		"_postman_id": "fb1523a5-807d-4255-bbd3-ed97274dbd6c",
+		"name": "VictimTail API",
+		"description": "Contact Support:\n Name: Victoria Rostovskaya\n Email: uictoriam1367@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "{company Id}",
+					"item": [
+						{
+							"name": "Get Company",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company/:companyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company",
+										":companyId"
+									],
+									"variable": [
+										{
+											"key": "companyId",
+											"value": "1",
+											"type": "string",
+											"description": "(Required) Company identifier"
+										}
+									]
+								},
+								"description": "Request for Company information"
+							},
+							"response": [
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"title\": \"Google\",\n \"description\": \"Google is a multinational, publicly-traded organization  built around the company's hugely popular search engine. Google's other enterprises include Internet analytics, cloud computing, advertising technologies, and Web app, browser and operating system development.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Company",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "YmFyYXNoZWsuQ29tcGFueTpjcmVhdGUsdXBkYXRlLGRlbGV0ZQ==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"new title\",\n    \"description\": \"new description\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/company/:companyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company",
+										":companyId"
+									],
+									"variable": [
+										{
+											"key": "companyId",
+											"value": "1",
+											"type": "string",
+											"description": "(Required) Company identifier"
+										}
+									]
+								},
+								"description": "Request for update information about a Company"
+							},
+							"response": [
+								{
+									"name": "Conflict",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Company was updated",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"title\": \"Google\",\n \"description\": \"Google is a multinational, publicly-traded organization  built around the company's hugely popular search engine. Google's other enterprises include Internet analytics, cloud computing, advertising technologies, and Web app, browser and operating system development.\"\n}"
+								},
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Access forbidden, invalid API-KEY was used",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid data was sent",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Company",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "YmFyYXNoZWsuQ29tcGFueTpjcmVhdGUsdXBkYXRlLGRlbGV0ZQ==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company/:companyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company",
+										":companyId"
+									],
+									"variable": [
+										{
+											"key": "companyId",
+											"value": "2",
+											"type": "string",
+											"description": "(Required) Company identifier"
+										}
+									]
+								},
+								"description": "Request for delete information about a Company"
+							},
+							"response": [
+								{
+									"name": "Conflict",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid data was sent",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Deleted",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Access forbidden, invalid API-KEY was used",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Company Vacancies",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company/:companyId/vacancies",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company",
+										":companyId",
+										"vacancies"
+									],
+									"variable": [
+										{
+											"key": "companyId",
+											"value": "1",
+											"type": "string",
+											"description": "(Required) Company identifier"
+										}
+									]
+								},
+								"description": "Request for a list of Company Vacancies"
+							},
+							"response": [
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId/vacancies",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId",
+												"vacancies"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n {\n  \"title\": \"Junior web developer\",\n  \"description\": \"Junior Web Developer / Full Stack Engineer (PHP JavaScript SQL Web). World-leading cyber security organisation is seeking a Junior Web Developer to join their 1000-strong international team and help protect the world against the growing number of adversaries in cyber space.\",\n  \"minSalary\": 450,\n  \"maxSalary\": 700,\n  \"minExperience\": 1,\n  \"maxExperience\": 3,\n  \"companyId\": 1523\n },\n {\n  \"title\": \"Junior web developer\",\n  \"description\": \"Junior Web Developer / Full Stack Engineer (PHP JavaScript SQL Web). World-leading cyber security organisation is seeking a Junior Web Developer to join their 1000-strong international team and help protect the world against the growing number of adversaries in cyber space.\",\n  \"minSalary\": 450,\n  \"maxSalary\": 700,\n  \"minExperience\": 1,\n  \"maxExperience\": 3,\n  \"companyId\": 1523\n }\n]"
+								},
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/company/:companyId/vacancies",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"company",
+												":companyId",
+												"vacancies"
+											],
+											"variable": [
+												{
+													"key": "companyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Create Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "YmFyYXNoZWsuQ29tcGFueTpjcmVhdGUsdXBkYXRlLGRlbGV0ZQ==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"title\",\n    \"description\": \"description\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/company",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"company"
+							]
+						},
+						"description": "Request for create new Company"
+					},
+					"response": [
+						{
+							"name": "Conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+						},
+						{
+							"name": "Access forbidden, invalid API-KEY was used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 15\n}"
+						},
+						{
+							"name": "Invalid data was sent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/company",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "vacancy",
+			"item": [
+				{
+					"name": "{vacancy Id}",
+					"item": [
+						{
+							"name": "Get Vacancy",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vacancy/:vacancyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy",
+										":vacancyId"
+									],
+									"variable": [
+										{
+											"key": "vacancyId",
+											"value": "1",
+											"type": "string",
+											"description": "(Required) Vacancy identifier"
+										}
+									]
+								},
+								"description": "Request for Vacancy information"
+							},
+							"response": [
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"title\": \"Junior web developer\",\n \"description\": \"Junior Web Developer / Full Stack Engineer (PHP JavaScript SQL Web). World-leading cyber security organisation is seeking a Junior Web Developer to join their 1000-strong international team and help protect the world against the growing number of adversaries in cyber space.\",\n \"minSalary\": 450,\n \"maxSalary\": 700,\n \"minExperience\": 1,\n \"maxExperience\": 3,\n \"companyId\": 1523\n}"
+								},
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Vacancy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "YmFyYXNoZWsuQ29tcGFueTpjcmVhdGUsdXBkYXRlLGRlbGV0ZTtWYWNhbmN5OmNyZWF0ZSx1cGRhdGUsZGVsZXRl",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"new title\",\n    \"minSalary\": 25000,\n    \"minExperience\": 1,\n    \"companyId\": 1,\n    \"description\": \"new description\",\n    \"maxSalary\": 40000,\n    \"maxExperience\": 3\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vacancy/:vacancyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy",
+										":vacancyId"
+									],
+									"variable": [
+										{
+											"key": "vacancyId",
+											"value": "1",
+											"type": "string",
+											"description": "(Required) Vacancy identifier"
+										}
+									]
+								},
+								"description": "Request for update information about a Vacancy"
+							},
+							"response": [
+								{
+									"name": "Vacancy was updated",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"title\": \"Junior web developer\",\n \"description\": \"Junior Web Developer / Full Stack Engineer (PHP JavaScript SQL Web). World-leading cyber security organisation is seeking a Junior Web Developer to join their 1000-strong international team and help protect the world against the growing number of adversaries in cyber space.\",\n \"minSalary\": 450,\n \"maxSalary\": 700,\n \"minExperience\": 1,\n \"maxExperience\": 3,\n \"companyId\": 1523\n}"
+								},
+								{
+									"name": "Conflict",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Access forbidden, invalid API-KEY was used",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid data was sent",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Vacancy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "YmFyYXNoZWsuQ29tcGFueTpjcmVhdGUsdXBkYXRlLGRlbGV0ZTtWYWNhbmN5OmNyZWF0ZSx1cGRhdGUsZGVsZXRl",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vacancy/:vacancyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy",
+										":vacancyId"
+									],
+									"variable": [
+										{
+											"key": "vacancyId",
+											"value": "2",
+											"type": "string",
+											"description": "(Required) Vacancy identifier"
+										}
+									]
+								},
+								"description": "Request for delete information about a Vacancy"
+							},
+							"response": [
+								{
+									"name": "Conflict",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Deleted",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Invalid data was sent",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Access forbidden, invalid API-KEY was used",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Resource was not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vacancy/:vacancyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vacancy",
+												":vacancyId"
+											],
+											"variable": [
+												{
+													"key": "vacancyId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Create Vacancy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "YmFyYXNoZWsuQ29tcGFueTpjcmVhdGUsdXBkYXRlLGRlbGV0ZTtWYWNhbmN5OmNyZWF0ZSx1cGRhdGUsZGVsZXRl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"title\",\n    \"minSalary\": 25000,\n    \"minExperience\": 1,\n    \"companyId\": 1,\n    \"description\": \"description\",\n    \"maxSalary\": 40000,\n    \"maxExperience\": 3\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vacancy",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vacancy"
+							]
+						},
+						"description": "Request for create new Vacancy"
+					},
+					"response": [
+						{
+							"name": "Invalid data was sent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vacancy",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vacancy",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+						},
+						{
+							"name": "Access forbidden, invalid API-KEY was used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vacancy",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vacancy",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vacancy"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 15\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get Token for bearerAuth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"<string>\",\n    \"password\": \"<string>\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "Provides token to user for making operations"
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "bearerToken",
+							"value": "9f34dd3a-ff8d-43aa-b286-9f22555319f6",
+							"description": "Generated Token for bearerAuth"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Invalid data was sent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\",\n \"invalidFields\": [\n  {\n   \"field\": \"field1\",\n   \"message\": \"field1 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"field2 is invalid\"\n  },\n  {\n   \"field\": \"subObject.field2\",\n   \"message\": \"another error in the field2\"\n  }\n ]\n}"
+				},
+				{
+					"name": "Conflict",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Companies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/companies",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"companies"
+					]
+				},
+				"description": "Request for a list of Companies"
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/companies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"title\": \"Google\",\n  \"description\": \"Google is a multinational, publicly-traded organization  built around the company's hugely popular search engine. Google's other enterprises include Internet analytics, cloud computing, advertising technologies, and Web app, browser and operating system development.\"\n },\n {\n  \"title\": \"Google\",\n  \"description\": \"Google is a multinational, publicly-traded organization  built around the company's hugely popular search engine. Google's other enterprises include Internet analytics, cloud computing, advertising technologies, and Web app, browser and operating system development.\"\n }\n]"
+				},
+				{
+					"name": "Resource was not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/companies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"status\": \"<integer>\",\n \"error\": \"<string>\",\n \"type\": \"<string>\",\n \"title\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6f74c256-a56b-4e86-a92f-626dd93aada3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a6336ea-b4cf-44b7-8980-1481c5d74717",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5ab602cd-f0dd-4767-adeb-92ef4441ef57",
+			"key": "baseUrl",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
